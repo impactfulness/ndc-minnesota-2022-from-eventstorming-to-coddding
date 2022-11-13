@@ -4,9 +4,27 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{EFC1C415-B64
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{BB3D3459-638B-4AB1-A204-C9B39C9C4448}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CinemaAllocations.Domain", "src\CinemaAllocations.Domain\CinemaAllocations.Domain.csproj", "{FD42A4D2-5EF6-4BE5-BEC4-226ACFF72017}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CinemaAllocations.UnitTests", "tests\CinemaAllocations.UnitTests\CinemaAllocations.UnitTests.csproj", "{874766C4-09A0-46BF-A2F9-F9DCB889E481}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{FD42A4D2-5EF6-4BE5-BEC4-226ACFF72017} = {EFC1C415-B64D-4BC5-8086-448E10D0B442}
+		{874766C4-09A0-46BF-A2F9-F9DCB889E481} = {BB3D3459-638B-4AB1-A204-C9B39C9C4448}
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FD42A4D2-5EF6-4BE5-BEC4-226ACFF72017}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD42A4D2-5EF6-4BE5-BEC4-226ACFF72017}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD42A4D2-5EF6-4BE5-BEC4-226ACFF72017}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD42A4D2-5EF6-4BE5-BEC4-226ACFF72017}.Release|Any CPU.Build.0 = Release|Any CPU
+		{874766C4-09A0-46BF-A2F9-F9DCB889E481}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{874766C4-09A0-46BF-A2F9-F9DCB889E481}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{874766C4-09A0-46BF-A2F9-F9DCB889E481}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{874766C4-09A0-46BF-A2F9-F9DCB889E481}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
