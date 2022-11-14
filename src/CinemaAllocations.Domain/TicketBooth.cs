@@ -2,17 +2,23 @@ namespace CinemaAllocations.Domain
 {
     public class TicketBooth
     {
-        private readonly IMovieScreeningRepository _screeningRepository;
+        private readonly IMovieScreeningRepository _movieScreeningRepository;
+        private const int MaximumNumberOfAllowedTickets = 8;
 
         public TicketBooth(IMovieScreeningRepository movieScreeningRepository)
         {
-            _screeningRepository = movieScreeningRepository;
+            _movieScreeningRepository = movieScreeningRepository;
         }
 
         public SeatsAllocated AllocateSeats(AllocateSeats allocateSeats)
         {
-            MovieScreening movieScreening = _screeningRepository.FindMovieScreeningById(allocateSeats.ShowId);
-            return null;
+            if (allocateSeats.PartyRequested > MaximumNumberOfAllowedTickets)
+            {
+                return new TooManyTicketsRequested(allocateSeats.PartyRequested);
+            }
+
+            var movieScreening = _movieScreeningRepository.FindMovieScreeningById(allocateSeats.ShowId);
+            return movieScreening.AllocateSeats(allocateSeats);
         }
     }
 }

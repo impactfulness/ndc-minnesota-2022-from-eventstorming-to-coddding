@@ -16,6 +16,21 @@ namespace CinemaAllocations.Domain
             SeatAvailability = seatAvailability;
         }
 
+        public Seat ReserveSeats()
+        {
+            return new Seat(RowName, Number, SeatAvailability.Reserved);
+        }
+
+        public bool IsAvailable()
+        {
+            return SeatAvailability == SeatAvailability.Available;
+        }
+
+        public bool SameSeatLocation(Seat seat)
+        {
+            return RowName.Equals(seat.RowName) && Number == seat.Number;
+        }
+
         protected override IEnumerable<object> GetAllAttributesToBeUsedForEquality()
         {
             return new object[] { RowName, Number, SeatAvailability };
