@@ -26,6 +26,6 @@ The result can be found in `lab2end`.
 
 ### lab 3
 
-In lab 3 you will start implementing a ORM model that splits the data persistance model from our domain model. We do this with the ports and adapters pattern. There is a new project called `CinemaAllocations.Adapters.DataPersistance` were we need to add our code.
+In lab 3 you will start implementing a ORM model that splits the data persistance model from our domain model. We do this with the ports and adapters pattern. There is a new project called `CinemaAllocations.Adapters.DataPersistence` were we need to add our code.
 
 The result can be found in `lab3end`.
