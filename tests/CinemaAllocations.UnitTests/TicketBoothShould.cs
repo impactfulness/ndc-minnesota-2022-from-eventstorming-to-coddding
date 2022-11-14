@@ -7,6 +7,7 @@ namespace CinemaAllocations.UnitTests
     public class TicketBoothShould
     {
         private const string FordTheaterId = "1";
+        private const string O3AuditoriumId = "2";
         private const string DockStreetId = "3";
         private const string MadisonTheaterId = "5";
 
@@ -64,6 +65,33 @@ namespace CinemaAllocations.UnitTests
             var seatsAllocated = ticketBooth.AllocateSeats(new AllocateSeats(MadisonTheaterId, partyRequested));
 
             Check.That(seatsAllocated).IsInstanceOf<TooManyTicketsRequested>();
+        }
+
+        [Fact]
+        public void Reserve_three_adjacent_seats_when_available()
+        {
+            const int partyRequested = 3;
+
+            IMovieScreeningRepository repository = new StubMovieScreeningRepository();
+            var ticketBooth = new TicketBooth(repository);
+
+            var seatsAllocated = ticketBooth.AllocateSeats(new AllocateSeats(O3AuditoriumId, partyRequested));
+
+            Check.That(seatsAllocated.ReservedSeats).HasSize(3);
+            Check.That(seatsAllocated.SeatNames()).ContainsExactly("A8", "A9", "A10");
+        }
+
+        [Fact]
+        public void Return_NoPossibleAdjacentSeatsFound_when_4_tickets_are_requested()
+        {
+            const int partyRequested = 4;
+
+            IMovieScreeningRepository repository = new StubMovieScreeningRepository();
+            var ticketBooth = new TicketBooth(repository);
+
+            var seatsAllocated = ticketBooth.AllocateSeats(new AllocateSeats(O3AuditoriumId, partyRequested));
+
+            Check.That(true).IsFalse();
         }
     }
 }
