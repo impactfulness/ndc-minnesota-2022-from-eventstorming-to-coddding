@@ -29,9 +29,3 @@ The result can be found in `lab2end`.
 In lab 3 you will start implementing a ORM model that splits the data persistance model from our domain model. We do this with the ports and adapters pattern. There is a new project called `CinemaAllocations.Adapters.DataPersistence` were we need to add our code.
 
 The result can be found in `lab3end`.
-
-### Lab 4
-
-We are closing the loop, and we are adding a REST API. Together with it, we will add some system tests to cover all the different adapters. The new project is called `CinemaAllocations.Adapters.RestApi`.
-
-The result can be found in `lab4end`.
