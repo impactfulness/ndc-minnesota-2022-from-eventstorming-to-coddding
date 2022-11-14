@@ -91,7 +91,7 @@ namespace CinemaAllocations.UnitTests
 
             var seatsAllocated = ticketBooth.AllocateSeats(new AllocateSeats(O3AuditoriumId, partyRequested));
 
-            Check.That(true).IsFalse();
+            Check.That(seatsAllocated).IsInstanceOf<NoPossibleAdjacentSeatsFound>();
         }
     }
 }

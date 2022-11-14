@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using Value;
 
 namespace CinemaAllocations.Domain
@@ -29,6 +30,19 @@ namespace CinemaAllocations.Domain
         public bool SameSeatLocation(Seat seat)
         {
             return RowName.Equals(seat.RowName) && Number == seat.Number;
+        }
+
+        public bool IsAdjacentWith(List<Seat> seats)
+        {
+            var orderedSeats = seats.OrderBy(s => s.Number).ToList();
+
+            foreach (var seat in orderedSeats)
+            {
+                if (Number + 1 == seat.Number || Number - 1 == seat.Number)
+                    return true;
+            }
+
+            return false;
         }
 
         protected override IEnumerable<object> GetAllAttributesToBeUsedForEquality()

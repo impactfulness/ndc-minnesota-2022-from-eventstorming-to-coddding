@@ -21,7 +21,8 @@ namespace CinemaAllocations.Domain
 
             foreach (var seat in Seats)
             {
-                if (seat.IsAvailable())
+                if (seat.IsAvailable() &&
+                    (!allocation.AllocatedSeats.Any() || seat.IsAdjacentWith(allocation.AllocatedSeats)))
                 {
                     allocation.AddSeat(seat);
 
@@ -30,9 +31,18 @@ namespace CinemaAllocations.Domain
                         return new SeatsAllocated(allocation.AllocatedSeats, allocateSeats.PartyRequested);
                     }
                 }
+                else
+                {
+                    allocation = new SeatAllocation(allocateSeats.PartyRequested);
+                }
             }
 
             return new NoPossibleAllocationsFound(allocateSeats.PartyRequested);
+        }
+
+        public int ReturnNumberOfSeatsAvailable()
+        {
+            return Seats.Count(seat => seat.IsAvailable());
         }
 
         public Row MakeSeatsReserved(List<Seat> updatedSeats)
