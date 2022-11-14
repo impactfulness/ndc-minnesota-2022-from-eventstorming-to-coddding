@@ -24,7 +24,7 @@ We have added two more test to `TicketBoothShould` for you to implement. In this
 
 The result can be found in `lab2end`.
 
-### lab 3
+### Lab 3
 
 In lab 3 you will start implementing a ORM model that splits the data persistance model from our domain model. We do this with the ports and adapters pattern. There is a new project called `CinemaAllocations.Adapters.DataPersistence` were we need to add our code.
 
