@@ -17,3 +17,9 @@ We use the following naïve first design of our model to implement with outside-
 ![Aggregate model](aggregate-model.jpg)
 
 The results can be found in `lab1end`.
+
+### Lab 2
+
+We have added two more test to `TicketBoothShould` for you to implement. In this lab you will focus on implementing the adjacent seating rule. We have added a new Stub for you to use which you can checkout in `StubMovieScreening/Stubs/README.MD`. The model has not changed!
+
+The result can be found in `lab2end`.
