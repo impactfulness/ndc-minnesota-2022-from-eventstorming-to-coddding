@@ -12,6 +12,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CinemaAllocations.Adapters.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CinemaAllocations.IntegrationTests", "tests\CinemaAllocations.IntegrationTests\CinemaAllocations.IntegrationTests.csproj", "{8B4A0848-BE69-463A-A1D5-4288216743B9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CinemaAllocations.Adapters.RestApi", "src\CinemaAllocations.Adapters.RestApi\CinemaAllocations.Adapters.RestApi.csproj", "{08B572B5-D554-4915-BD10-82FC030EE19E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CinemaAllocations.SystemTests", "tests\CinemaAllocations.SystemTests\CinemaAllocations.SystemTests.csproj", "{B5E7E268-7AA2-43BB-A501-A3A1D819385A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -22,6 +26,8 @@ Global
 		{874766C4-09A0-46BF-A2F9-F9DCB889E481} = {BB3D3459-638B-4AB1-A204-C9B39C9C4448}
 		{7617131A-999B-45AD-BACA-7F749DAF31A2} = {EFC1C415-B64D-4BC5-8086-448E10D0B442}
 		{8B4A0848-BE69-463A-A1D5-4288216743B9} = {BB3D3459-638B-4AB1-A204-C9B39C9C4448}
+		{08B572B5-D554-4915-BD10-82FC030EE19E} = {EFC1C415-B64D-4BC5-8086-448E10D0B442}
+		{B5E7E268-7AA2-43BB-A501-A3A1D819385A} = {BB3D3459-638B-4AB1-A204-C9B39C9C4448}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{FD42A4D2-5EF6-4BE5-BEC4-226ACFF72017}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -40,5 +46,13 @@ Global
 		{8B4A0848-BE69-463A-A1D5-4288216743B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8B4A0848-BE69-463A-A1D5-4288216743B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8B4A0848-BE69-463A-A1D5-4288216743B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{08B572B5-D554-4915-BD10-82FC030EE19E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08B572B5-D554-4915-BD10-82FC030EE19E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08B572B5-D554-4915-BD10-82FC030EE19E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08B572B5-D554-4915-BD10-82FC030EE19E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B5E7E268-7AA2-43BB-A501-A3A1D819385A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5E7E268-7AA2-43BB-A501-A3A1D819385A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5E7E268-7AA2-43BB-A501-A3A1D819385A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5E7E268-7AA2-43BB-A501-A3A1D819385A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
