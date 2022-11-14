@@ -27,19 +27,4 @@
       <ProjectReference Include="..\..\src\CinemaAllocations.Adapters.DataPersistence\CinemaAllocations.Adapters.DataPersistence.csproj" />
     </ItemGroup>
 
-    <ItemGroup>
-      <None Update="StubMovieScreening\Stubs\MovieScreenings\3-dock-street.json">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </None>
-      <None Update="StubMovieScreening\Stubs\MovieScreenings\1-ford-theater.json">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </None>
-      <None Update="StubMovieScreening\Stubs\MovieScreenings\2-o3-auditorium.json">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </None>
-      <None Update="StubMovieScreening\Stubs\MovieScreenings\5-madison-theater.json">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </None>
-    </ItemGroup>
-
 </Project>
