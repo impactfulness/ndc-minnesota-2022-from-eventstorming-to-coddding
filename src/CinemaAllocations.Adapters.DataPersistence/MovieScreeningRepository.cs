@@ -15,6 +15,14 @@ public class MovieScreeningRepository : IMovieScreeningRepository, IDisposable
     {
         var movieScreeningDataModel = _myContext.MovieScreenings.SingleOrDefault(x => x.Id == screeningId);
 
+        // Given the way that InMemory is working in .NET 6, I'm forcing the load of the entities in this way.
+        // Using a database technology, it will need a different query model.
+        _myContext.Entry(movieScreeningDataModel).Collection(m => m.Rows).Load();
+        foreach (var row in movieScreeningDataModel.Rows)
+        {
+            _myContext.Entry(row).Collection(r => r.Seats).Load();
+        }
+
         return movieScreeningDataModel?.ToDomainModel();
     }
 
