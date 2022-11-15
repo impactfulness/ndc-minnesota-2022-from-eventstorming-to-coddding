@@ -35,3 +35,9 @@ The result can be found in `lab3end`.
 We are rounding up the application. In this lab, you will implement a REST API to expose the cinema allocations. The REST API will be a adapter. There is a new project called `CinemaAllocations.Adapters.RestApi` were we need to add our code; and also a `SystemTests` project for the tests targetting the REST API.
 
 The result can be found in `lab4end`.
+
+### Lab 5
+
+Sometimes we over-abuse programing language primitives. Although it works, it is not bound to our model. In this lab, identify and refactor de domain model to remove the primitive obsession. You can also clean other areas of the code, such as warnings.
+
+This lab doesn't have a corresponding end branch. We are curious about your solution!
