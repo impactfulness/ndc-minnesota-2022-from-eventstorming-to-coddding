@@ -4,7 +4,7 @@ using CinemaAllocations.Domain;
 
 namespace CinemaAllocations.UnitTests.StubMovieScreening
 {
-    public class StubMovieScreeningRepository : IMovieScreeningRepository
+    public class StubMovieScreeningRepository : IMovieScreenings
     {
         private readonly Dictionary<string, MovieScreeningDto> _movieScreeningRepository =
             new Dictionary<string, MovieScreeningDto>();

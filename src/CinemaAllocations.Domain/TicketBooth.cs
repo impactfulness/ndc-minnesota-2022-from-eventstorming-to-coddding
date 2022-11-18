@@ -2,10 +2,10 @@ namespace CinemaAllocations.Domain
 {
     public class TicketBooth
     {
-        private readonly IMovieScreeningRepository _movieScreeningRepository;
+        private readonly IMovieScreenings _movieScreeningRepository;
         private const int MaximumNumberOfAllowedTickets = 8;
 
-        public TicketBooth(IMovieScreeningRepository movieScreeningRepository)
+        public TicketBooth(IMovieScreenings movieScreeningRepository)
         {
             _movieScreeningRepository = movieScreeningRepository;
         }

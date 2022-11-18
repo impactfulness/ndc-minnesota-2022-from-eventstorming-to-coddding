@@ -2,7 +2,7 @@ using CinemaAllocations.Domain;
 
 namespace CinemaAllocations.Adapters.DataPersistence;
 
-public class MovieScreeningRepository : IMovieScreeningRepository, IDisposable
+public class MovieScreeningRepository : IMovieScreenings, IDisposable
 {
     private readonly CinemaContext _myContext;
 

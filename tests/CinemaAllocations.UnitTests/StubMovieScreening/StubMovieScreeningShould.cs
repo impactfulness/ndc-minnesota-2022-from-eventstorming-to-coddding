@@ -8,7 +8,7 @@ public class StubMovieScreeningShould
     [Fact]
     public void Find_movie_screening_one()
     {
-        IMovieScreeningRepository repository = new StubMovieScreeningRepository();
+        IMovieScreenings repository = new StubMovieScreeningRepository();
 
         var movieScreening = repository.FindMovieScreeningById("1");
 

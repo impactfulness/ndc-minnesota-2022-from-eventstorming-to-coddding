@@ -1,6 +1,6 @@
 namespace CinemaAllocations.Domain
 {
-    public interface IMovieScreeningRepository
+    public interface IMovieScreenings
     {
         MovieScreening FindMovieScreeningById(string screeningId);
     }

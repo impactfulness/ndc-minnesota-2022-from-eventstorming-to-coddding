@@ -7,7 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 
 builder.Services.AddTransient<TicketBooth>();
-builder.Services.AddTransient<IMovieScreeningRepository, MovieScreeningRepository>();
+builder.Services.AddTransient<IMovieScreenings, MovieScreeningRepository>();
 
 // In this example it is missing the non-inmemory test database, like a document and relational one. I'm not adding it, to decrease the complexity.
 
