@@ -4,13 +4,13 @@ namespace CinemaAllocations.Domain
 {
     public class MovieScreening
     {
-        public IReadOnlyDictionary<string, Row> Rows => _rows;
+        public IReadOnlyDictionary<string, Row> Rows => _rowsOld;
 
-        private readonly Dictionary<string, Row> _rows;
+        private readonly Dictionary<string, Row> _rowsOld;
 
         public MovieScreening(Dictionary<string, Row> rows)
         {
-            _rows = rows;
+            _rowsOld = rows;
         }
 
         public MovieScreening(Rows rows)
@@ -21,13 +21,13 @@ namespace CinemaAllocations.Domain
         public SeatsAllocated AllocateSeats(AllocateSeats allocateSeats)
         {
             var numberOfSeatsAvailable = 0;
-            foreach (var row in _rows.Values)
+            foreach (var row in _rowsOld.Values)
             {
                 var seatsAllocated = row.AllocateSeats(allocateSeats);
                 if (seatsAllocated.GetType() != typeof(NoPossibleAllocationsFound))
                 {
                     var updatedRow = row.MakeSeatsReserved(seatsAllocated.ReservedSeats);
-                    _rows[updatedRow.Name] = updatedRow;
+                    _rowsOld[updatedRow.Name] = updatedRow;
                     return seatsAllocated;
                 }
 
