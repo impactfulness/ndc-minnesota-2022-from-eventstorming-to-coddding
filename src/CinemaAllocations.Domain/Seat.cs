@@ -51,6 +51,11 @@ namespace CinemaAllocations.Domain
             return false;
         }
 
+        public static Seat CreateFrom(string rowName, uint number, SeatAvailability seatAvailability)
+        {
+            return new Seat((RowName)rowName, number, seatAvailability);
+        }
+
         protected override IEnumerable<object> GetAllAttributesToBeUsedForEquality()
         {
             return new object[] { RowName, Number, SeatAvailability };
