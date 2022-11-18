@@ -17,22 +17,22 @@ namespace CinemaAllocations.Domain
             SeatAvailability = seatAvailability;
         }
 
-        public Seat ReserveSeats()
+        internal Seat ReserveSeats()
         {
             return new Seat(RowName, Number, SeatAvailability.Reserved);
         }
 
-        public bool IsAvailable()
+        internal bool IsAvailable()
         {
             return SeatAvailability == SeatAvailability.Available;
         }
 
-        public bool SameSeatLocation(Seat seat)
+        private bool SameSeatLocation(Seat seat)
         {
             return RowName.Equals(seat.RowName) && Number == seat.Number;
         }
 
-        public bool IsAdjacentWith(List<Seat> seats)
+        internal bool IsAdjacentWith(List<Seat> seats)
         {
             var orderedSeats = seats.OrderBy(s => s.Number).ToList();
 
