@@ -23,7 +23,7 @@ namespace CinemaAllocations.Domain
             return _rows;
         }
 
-        public static Rows CreateFrom(Dictionary<string, Row> rows)
+        internal static Rows CreateFrom(Dictionary<string, Row> rows)
         {
             return new Rows(rows);
         }
