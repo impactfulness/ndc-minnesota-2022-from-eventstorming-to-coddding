@@ -6,7 +6,7 @@ namespace CinemaAllocations.Domain
 {
     public class Seat : ValueType<Seat>
     {
-        public RowName RowName { get; set; }
+        public RowName RowName { get; }
         public string RowNameOld { get; }
         public uint Number { get; }
         public SeatAvailability SeatAvailability { get; }
@@ -14,6 +14,7 @@ namespace CinemaAllocations.Domain
         public Seat(string rowName, uint number, SeatAvailability seatAvailability)
         {
             RowNameOld = rowName;
+            RowName = (RowName)rowName;
             Number = number;
             SeatAvailability = seatAvailability;
         }
