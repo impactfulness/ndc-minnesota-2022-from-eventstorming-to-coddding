@@ -6,7 +6,9 @@ namespace CinemaAllocations.Domain
     {
         private readonly Dictionary<string, Row> _rows;
 
-        public Rows(Dictionary<string,Row> rows)
+        public Dictionary<string, Row>.ValueCollection Values => _rows.Values;
+
+        public Rows(Dictionary<string, Row> rows)
         {
             _rows = rows;
         }
