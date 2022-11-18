@@ -16,7 +16,7 @@ namespace CinemaAllocations.Domain
 
         public bool Equals(RowName other)
         {
-            throw new NotImplementedException();
+            return _value == other._value;
         }
 
         public override bool Equals(object? obj)
