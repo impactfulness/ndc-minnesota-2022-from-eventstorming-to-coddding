@@ -1,6 +1,6 @@
 namespace CinemaAllocations.Domain
 {
-    public class RowName
+    public struct RowName
     {
     }
 }
