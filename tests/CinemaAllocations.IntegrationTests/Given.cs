@@ -13,24 +13,24 @@ internal static class Given
         internal static string FordTheaterId => "1";
 
         internal static MovieScreeningRepository FordTheater =>
-            RetrieveMovieScreeningFromJson(FordTheaterId);
+            RetrieveMovieScreeningsFromJson(FordTheaterId);
 
         internal static string DockStreetId => "3";
 
         internal static MovieScreeningRepository DockStreet =>
-            RetrieveMovieScreeningFromJson(DockStreetId);
+            RetrieveMovieScreeningsFromJson(DockStreetId);
 
         internal static string MadisonTheatherId => "5";
 
         internal static MovieScreeningRepository MadisonTheater =>
-            RetrieveMovieScreeningFromJson(MadisonTheatherId);
+            RetrieveMovieScreeningsFromJson(MadisonTheatherId);
 
         internal static string O3AuditoriumId => "2";
 
         internal static MovieScreeningRepository O3Auditorium =>
-            RetrieveMovieScreeningFromJson(O3AuditoriumId);
+            RetrieveMovieScreeningsFromJson(O3AuditoriumId);
 
-        private static MovieScreeningRepository RetrieveMovieScreeningFromJson(string showId)
+        private static MovieScreeningRepository RetrieveMovieScreeningsFromJson(string showId)
         {
             var options = new DbContextOptionsBuilder<CinemaContext>()
                 .UseInMemoryDatabase(databaseName: Guid.NewGuid().ToString())
