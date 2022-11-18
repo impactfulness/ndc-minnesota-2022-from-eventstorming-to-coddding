@@ -40,7 +40,7 @@ namespace CinemaAllocations.Domain
             return new NoPossibleAllocationsFound(allocateSeats.PartyRequested);
         }
 
-        public int ReturnNumberOfSeatsAvailable()
+        internal int ReturnNumberOfSeatsAvailable()
         {
             return Seats.Count(seat => seat.IsAvailable());
         }
