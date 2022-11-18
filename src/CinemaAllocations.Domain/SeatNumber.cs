@@ -2,7 +2,7 @@ using System;
 
 namespace CinemaAllocations.Domain
 {
-    public struct SeatNumber : IEquatable<SeatNumber>
+    public struct SeatNumber : IEquatable<SeatNumber>, IComparable<SeatNumber>
     {
         private readonly uint _value;
 
@@ -27,6 +27,11 @@ namespace CinemaAllocations.Domain
         public bool Equals(SeatNumber other)
         {
             return _value == other._value;
+        }
+
+        public int CompareTo(SeatNumber other)
+        {
+            return _value.CompareTo(other._value);
         }
 
         public override bool Equals(object? obj)
