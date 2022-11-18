@@ -19,6 +19,14 @@ namespace CinemaAllocations.Domain
             SeatAvailability = seatAvailability;
         }
 
+        private Seat(RowName rowName, SeatNumber number, SeatAvailability seatAvailability)
+        {
+            RowName = rowName;
+            NumberOld = number;
+            Number = number;
+            SeatAvailability = seatAvailability;
+        }
+
         internal Seat ReserveSeats()
         {
             return new Seat(RowName, NumberOld, SeatAvailability.Reserved);
