@@ -4,14 +4,14 @@ namespace CinemaAllocations.Domain
 {
     public struct RowName : IEquatable<RowName>
     {
-        private readonly string _rowName;
+        private readonly string _value;
 
         private RowName(string rowName)
         {
             if (string.IsNullOrWhiteSpace(rowName))
                 throw new ArgumentException("Row name cannot be null or whitespace.", nameof(rowName));
 
-            _rowName = rowName;
+            _value = rowName;
         }
 
         public bool Equals(RowName other)
@@ -26,7 +26,7 @@ namespace CinemaAllocations.Domain
 
         public override int GetHashCode()
         {
-            return _rowName.GetHashCode();
+            return _value.GetHashCode();
         }
     }
 }
