@@ -1,4 +1,3 @@
-using CinemaAllocations.Adapters.DataPersistence;
 using CinemaAllocations.Domain;
 using NFluent;
 
