@@ -13,6 +13,11 @@ namespace CinemaAllocations.Domain
             _rows = rows;
         }
 
+        public MovieScreening(Rows rows)
+        {
+            
+        }
+
         public SeatsAllocated AllocateSeats(AllocateSeats allocateSeats)
         {
             var numberOfSeatsAvailable = 0;
