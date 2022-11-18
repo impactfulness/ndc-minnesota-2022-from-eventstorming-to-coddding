@@ -12,5 +12,10 @@ namespace CinemaAllocations.Domain
         {
             _rows = rows;
         }
+
+        internal void UpdateRow(Row rowToUpdate)
+        {
+            _rows[rowToUpdate.Name] = rowToUpdate;
+        }
     }
 }
