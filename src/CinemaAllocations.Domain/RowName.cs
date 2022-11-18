@@ -42,6 +42,16 @@ namespace CinemaAllocations.Domain
             return _value.GetHashCode();
         }
 
+        public static bool operator ==(RowName left, RowName right)
+        {
+            return left.Equals(right);
+        }
+
+        public static bool operator !=(RowName left, RowName right)
+        {
+            return !left.Equals(right);
+        }
+
         public override string ToString()
         {
             return _value;
