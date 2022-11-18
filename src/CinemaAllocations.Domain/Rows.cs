@@ -24,6 +24,11 @@ namespace CinemaAllocations.Domain
             return _rows;
         }
 
+        public int TotalNumberOfRows()
+        {
+            return _rows.Count;
+        }
+
         internal static Rows CreateFrom(Dictionary<string, Row> rows)
         {
             return new Rows(rows);
