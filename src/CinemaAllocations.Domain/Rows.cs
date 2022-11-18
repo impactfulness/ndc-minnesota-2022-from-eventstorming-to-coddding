@@ -19,11 +19,6 @@ namespace CinemaAllocations.Domain
             _rows[row.Name] = row;
         }
 
-        internal Dictionary<string, Row> ToDictionary()
-        {
-            return _rows;
-        }
-
         public int TotalNumberOfRows()
         {
             return _rows.Count;
