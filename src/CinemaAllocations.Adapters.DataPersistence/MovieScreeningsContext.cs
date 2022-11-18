@@ -2,13 +2,13 @@ using Microsoft.EntityFrameworkCore;
 
 namespace CinemaAllocations.Adapters.DataPersistence;
 
-public class CinemaContext : DbContext
+public class MovieScreeningsContext : DbContext
 {
     public DbSet<MovieScreening> MovieScreenings { get; set; }
     public DbSet<Row> Rows { get; set; }
     public DbSet<Seat> Seats { get; set; }
 
-    public CinemaContext(DbContextOptions<CinemaContext> options)
+    public MovieScreeningsContext(DbContextOptions<MovieScreeningsContext> options)
         : base(options)
     {
     }

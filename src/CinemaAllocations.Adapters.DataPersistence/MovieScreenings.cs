@@ -4,9 +4,9 @@ namespace CinemaAllocations.Adapters.DataPersistence;
 
 public class MovieScreenings : IMovieScreenings, IDisposable
 {
-    private readonly CinemaContext _myContext;
+    private readonly MovieScreeningsContext _myContext;
 
-    public MovieScreenings(CinemaContext myContext)
+    public MovieScreenings(MovieScreeningsContext myContext)
     {
         _myContext = myContext ?? throw new ArgumentNullException(nameof(myContext));
     }

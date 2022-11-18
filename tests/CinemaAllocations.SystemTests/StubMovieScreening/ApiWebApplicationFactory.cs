@@ -27,7 +27,7 @@ public class ApiWebApplicationFactory : WebApplicationFactory<Program>
     {
         builder.ConfigureTestServices(services =>
         {
-            services.AddDbContext<Adapters.DataPersistence.CinemaContext>(opt =>
+            services.AddDbContext<Adapters.DataPersistence.MovieScreeningsContext>(opt =>
                 opt.UseInMemoryDatabase(DatabaseName));
         });
     }

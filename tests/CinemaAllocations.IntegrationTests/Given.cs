@@ -32,18 +32,18 @@ internal static class Given
 
         private static MovieScreenings RetrieveMovieScreeningsFromJson(string showId)
         {
-            var options = new DbContextOptionsBuilder<CinemaContext>()
+            var options = new DbContextOptionsBuilder<MovieScreeningsContext>()
                 .UseInMemoryDatabase(databaseName: Guid.NewGuid().ToString())
                 .Options;
 
-            var cinemaContext = new CinemaContext(options);
+            var cinemaContext = new MovieScreeningsContext(options);
 
             AddMovieScreeningIfDoesExists(showId, cinemaContext);
 
             return new MovieScreenings(cinemaContext);
         }
 
-        private static void AddMovieScreeningIfDoesExists(string showId, CinemaContext cinemaContext)
+        private static void AddMovieScreeningIfDoesExists(string showId, MovieScreeningsContext cinemaContext)
         {
             var directoryName = $"{GetExecutingAssemblyDirectoryFullPath()}\\StubMovieScreening\\Stubs\\MovieScreenings\\";
 

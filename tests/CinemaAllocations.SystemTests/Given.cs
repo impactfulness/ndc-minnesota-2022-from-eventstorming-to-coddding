@@ -60,15 +60,15 @@ internal static class Given
 
         private static void LoadMovieScreeningFromJson(string showId)
         {
-            var options = new DbContextOptionsBuilder<CinemaContext>()
+            var options = new DbContextOptionsBuilder<MovieScreeningsContext>()
                 .UseInMemoryDatabase(databaseName: ApiWebApplicationFactory.DatabaseName)
                 .Options;
 
-            using var cinemaContext = new CinemaContext(options);
+            using var cinemaContext = new MovieScreeningsContext(options);
             AddMovieScreeningIfDoesExists(showId, cinemaContext);
         }
 
-        private static void AddMovieScreeningIfDoesExists(string showId, CinemaContext cinemaContext)
+        private static void AddMovieScreeningIfDoesExists(string showId, MovieScreeningsContext cinemaContext)
         {
             if (cinemaContext.MovieScreenings.Any(x => x.Id.Equals(showId)))
                 return;
