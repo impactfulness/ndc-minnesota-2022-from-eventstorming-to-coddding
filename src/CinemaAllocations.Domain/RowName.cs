@@ -14,6 +14,16 @@ namespace CinemaAllocations.Domain
             _value = rowName;
         }
 
+        public static implicit operator string(RowName rowName)
+        {
+            return rowName._value;
+        }
+
+        public static explicit operator RowName(string rowName)
+        {
+            return new RowName(rowName);
+        }
+
         public bool Equals(RowName other)
         {
             return _value == other._value;
