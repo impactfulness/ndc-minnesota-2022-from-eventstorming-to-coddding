@@ -21,6 +21,9 @@ namespace CinemaAllocations.Domain
 
         public override bool Equals(object? obj)
         {
+            if (obj == null)
+                return false;
+
             return obj is RowName other && Equals(other);
         }
 
