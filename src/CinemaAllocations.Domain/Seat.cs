@@ -8,14 +8,11 @@ namespace CinemaAllocations.Domain
     public class Seat : ValueType<Seat>
     {
         public RowName RowName { get; }
-        [Obsolete]
-        public string RowNameOld { get; }
         public uint Number { get; }
         public SeatAvailability SeatAvailability { get; }
 
         public Seat(string rowName, uint number, SeatAvailability seatAvailability)
         {
-            RowNameOld = rowName;
             RowName = (RowName)rowName;
             Number = number;
             SeatAvailability = seatAvailability;
