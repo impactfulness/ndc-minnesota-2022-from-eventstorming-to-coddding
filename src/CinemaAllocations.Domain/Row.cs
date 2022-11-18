@@ -45,7 +45,7 @@ namespace CinemaAllocations.Domain
             return Seats.Count(seat => seat.IsAvailable());
         }
 
-        public Row MakeSeatsReserved(List<Seat> updatedSeats)
+        internal Row MakeSeatsReserved(List<Seat> updatedSeats)
         {
             foreach (var newSeat in updatedSeats)
             {
