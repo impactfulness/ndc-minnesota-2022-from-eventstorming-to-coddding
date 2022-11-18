@@ -9,7 +9,7 @@ public class Seat
     public Seat(Domain.Seat seat)
     {
         RowName = seat.RowName;
-        Number = seat.Number;
+        Number = seat.NumberOld;
         SeatName = seat.ToString();
     }
 }

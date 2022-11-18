@@ -17,7 +17,7 @@ namespace CinemaAllocations.Domain
 
         public IEnumerable<string> SeatNames()
         {
-            return ReservedSeats.OrderBy(seat => seat.Number).Select(seat => seat.ToString());
+            return ReservedSeats.OrderBy(seat => seat.NumberOld).Select(seat => seat.ToString());
         }
     }
 }
