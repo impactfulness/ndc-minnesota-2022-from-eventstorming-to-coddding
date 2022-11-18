@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 
 namespace CinemaAllocations.Domain
@@ -6,6 +7,7 @@ namespace CinemaAllocations.Domain
     {
         public IReadOnlyDictionary<string, Row> Rows => _rowsOld;
 
+        [Obsolete]
         private readonly Dictionary<string, Row> _rowsOld;
         
         private readonly Rows _rows;
