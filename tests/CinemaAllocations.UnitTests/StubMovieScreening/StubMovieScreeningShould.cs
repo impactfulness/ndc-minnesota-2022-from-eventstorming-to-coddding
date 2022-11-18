@@ -13,6 +13,6 @@ public class StubMovieScreeningShould
         var movieScreening = repository.FindMovieScreeningById("1");
 
         Check.That(movieScreening).IsNotNull();
-        Check.That(movieScreening.RowsOld.Count).IsEqualTo(2);
+        Check.That(movieScreening.Rows.TotalNumberOfRows()).IsEqualTo(2);
     }
 }
