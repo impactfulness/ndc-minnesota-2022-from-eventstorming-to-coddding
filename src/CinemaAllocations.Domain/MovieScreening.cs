@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 
 namespace CinemaAllocations.Domain
@@ -8,6 +9,7 @@ namespace CinemaAllocations.Domain
 
         private readonly Rows _rows;
 
+        [Obsolete]
         public MovieScreening(Rows rows)
         {
             _rows = rows;
