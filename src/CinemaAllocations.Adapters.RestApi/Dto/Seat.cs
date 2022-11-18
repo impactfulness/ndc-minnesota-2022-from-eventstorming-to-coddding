@@ -4,7 +4,7 @@ public class Seat
 {
     public string RowName { get; }
     public uint Number { get; }
-    public string SeatName { get; set; }
+    public string SeatName { get; }
 
     public Seat(Domain.Seat seat)
     {
