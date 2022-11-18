@@ -29,6 +29,6 @@ public sealed class MovieScreening
             rows.Add(rowDataModel.Name, new Domain.Row(rowDataModel.Name, seats));
         }
 
-        return new Domain.MovieScreening(rows);
+        return new Domain.MovieScreening(Domain.Rows.CreateFrom(rows));
     }
 }
