@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Value;
@@ -7,6 +8,7 @@ namespace CinemaAllocations.Domain
     public class Seat : ValueType<Seat>
     {
         public RowName RowName { get; }
+        [Obsolete]
         public string RowNameOld { get; }
         public uint Number { get; }
         public SeatAvailability SeatAvailability { get; }
@@ -21,7 +23,7 @@ namespace CinemaAllocations.Domain
 
         internal Seat ReserveSeats()
         {
-            return new Seat(RowNameOld, Number, SeatAvailability.Reserved);
+            return new Seat(RowName, Number, SeatAvailability.Reserved);
         }
 
         internal bool IsAvailable()
@@ -31,7 +33,7 @@ namespace CinemaAllocations.Domain
 
         private bool SameSeatLocation(Seat seat)
         {
-            return RowNameOld.Equals(seat.RowNameOld) && Number == seat.Number;
+            return RowName.Equals(seat.RowName) && Number == seat.Number;
         }
 
         internal bool IsAdjacentWith(List<Seat> seats)
@@ -49,12 +51,12 @@ namespace CinemaAllocations.Domain
 
         protected override IEnumerable<object> GetAllAttributesToBeUsedForEquality()
         {
-            return new object[] { RowNameOld, Number, SeatAvailability };
+            return new object[] { RowName, Number, SeatAvailability };
         }
 
         public override string ToString()
         {
-            return $"{RowNameOld}{Number}";
+            return $"{RowName}{Number}";
         }
     }
 }
