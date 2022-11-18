@@ -21,9 +21,5 @@ public class MovieScreeningsContext : DbContext
             .Entity<Seat>()
             .HasOne(s => s.Row)
             .WithMany(r => r.Seats);
-
-        // modelBuilder
-        //     .Entity<Row>()
-        //     .HasMany<Seat>();
     }
 }
