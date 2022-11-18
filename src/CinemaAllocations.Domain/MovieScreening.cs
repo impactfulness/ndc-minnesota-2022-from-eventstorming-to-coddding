@@ -7,7 +7,8 @@ namespace CinemaAllocations.Domain
     {
         private readonly Rows _rows;
         
-        public IReadOnlyDictionary<string, Row> Rows => _rows.ToDictionary();
+        [Obsolete]
+        public IReadOnlyDictionary<string, Row> RowsOld => _rows.ToDictionary();
 
         private MovieScreening(Rows rows)
         {
