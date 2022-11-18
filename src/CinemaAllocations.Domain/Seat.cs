@@ -11,12 +11,9 @@ namespace CinemaAllocations.Domain
         public uint NumberOld { get; }
         public SeatAvailability SeatAvailability { get; }
 
-        private Seat(RowName rowName, uint number, SeatAvailability seatAvailability)
+        private Seat(RowName rowName, uint number, SeatAvailability seatAvailability) : this(rowName,
+            (SeatNumber)number, seatAvailability)
         {
-            RowName = rowName;
-            NumberOld = number;
-            Number = (SeatNumber)number;
-            SeatAvailability = seatAvailability;
         }
 
         private Seat(RowName rowName, SeatNumber number, SeatAvailability seatAvailability)
