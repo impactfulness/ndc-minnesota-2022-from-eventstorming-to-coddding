@@ -11,11 +11,6 @@ namespace CinemaAllocations.Domain
         public uint NumberOld { get; }
         public SeatAvailability SeatAvailability { get; }
 
-        private Seat(RowName rowName, uint number, SeatAvailability seatAvailability) : this(rowName,
-            (SeatNumber)number, seatAvailability)
-        {
-        }
-
         private Seat(RowName rowName, SeatNumber number, SeatAvailability seatAvailability)
         {
             RowName = rowName;
@@ -26,7 +21,7 @@ namespace CinemaAllocations.Domain
 
         internal Seat ReserveSeats()
         {
-            return new Seat(RowName, NumberOld, SeatAvailability.Reserved);
+            return new Seat(RowName, Number, SeatAvailability.Reserved);
         }
 
         internal bool IsAvailable()
@@ -54,7 +49,7 @@ namespace CinemaAllocations.Domain
 
         public static Seat CreateFrom(string rowName, uint number, SeatAvailability seatAvailability)
         {
-            return new Seat((RowName)rowName, number, seatAvailability);
+            return new Seat((RowName)rowName, (SeatNumber)number, seatAvailability);
         }
 
         protected override IEnumerable<object> GetAllAttributesToBeUsedForEquality()
