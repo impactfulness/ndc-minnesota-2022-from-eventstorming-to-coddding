@@ -7,6 +7,8 @@ namespace CinemaAllocations.Domain
         public IReadOnlyDictionary<string, Row> Rows => _rowsOld;
 
         private readonly Dictionary<string, Row> _rowsOld;
+        
+        private readonly Rows _rows;
 
         public MovieScreening(Dictionary<string, Row> rows)
         {
@@ -15,7 +17,7 @@ namespace CinemaAllocations.Domain
 
         public MovieScreening(Rows rows)
         {
-            
+            _rows = rows;
         }
 
         public SeatsAllocated AllocateSeats(AllocateSeats allocateSeats)
