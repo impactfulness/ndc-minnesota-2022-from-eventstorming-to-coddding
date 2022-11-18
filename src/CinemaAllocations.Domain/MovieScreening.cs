@@ -8,11 +8,6 @@ namespace CinemaAllocations.Domain
 
         private readonly Rows _rows;
 
-        public MovieScreening(Dictionary<string, Row> rows)
-        {
-            _rows = new Rows(rows);
-        }
-
         public MovieScreening(Rows rows)
         {
             _rows = rows;
