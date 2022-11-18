@@ -38,5 +38,10 @@ namespace CinemaAllocations.Domain
 
             return new NoPossibleAllocationsFound(allocateSeats.PartyRequested);
         }
+
+        public static MovieScreening CreateFrom(Dictionary<string, Row> rows)
+        {
+            return new MovieScreening(Domain.Rows.CreateFrom(rows));
+        }
     }
 }
