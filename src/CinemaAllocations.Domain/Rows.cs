@@ -38,11 +38,6 @@ namespace CinemaAllocations.Domain
             return new NoPossibleAllocationsFound(allocateSeats.PartyRequested);
         }
 
-        internal void UpdateRow(Row row)
-        {
-            _rows[row.Name] = row;
-        }
-
         public int TotalNumberOfRows()
         {
             return _rows.Count;
