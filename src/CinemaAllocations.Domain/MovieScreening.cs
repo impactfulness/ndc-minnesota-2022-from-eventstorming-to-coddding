@@ -13,6 +13,7 @@ namespace CinemaAllocations.Domain
         public MovieScreening(Dictionary<string, Row> rows)
         {
             _rowsOld = rows;
+            _rows = new Rows(rows);
         }
 
         public MovieScreening(Rows rows)
