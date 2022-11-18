@@ -9,14 +9,12 @@ namespace CinemaAllocations.Domain
     {
         public RowName RowName { get; }
         public SeatNumber Number { get; }
-        [Obsolete]
-        public uint NumberOld { get; }
+        [Obsolete] public uint NumberOld { get; }
         public SeatAvailability SeatAvailability { get; }
 
         private Seat(RowName rowName, SeatNumber number, SeatAvailability seatAvailability)
         {
             RowName = rowName;
-            NumberOld = number;
             Number = number;
             SeatAvailability = seatAvailability;
         }
@@ -33,16 +31,16 @@ namespace CinemaAllocations.Domain
 
         private bool SameSeatLocation(Seat seat)
         {
-            return RowName.Equals(seat.RowName) && NumberOld == seat.NumberOld;
+            return RowName.Equals(seat.RowName) && Number == seat.Number;
         }
 
         internal bool IsAdjacentWith(List<Seat> seats)
         {
-            var orderedSeats = seats.OrderBy(s => s.NumberOld).ToList();
+            var orderedSeats = seats.OrderBy(s => s.Number).ToList();
 
             foreach (var seat in orderedSeats)
             {
-                if (NumberOld + 1 == seat.NumberOld || NumberOld - 1 == seat.NumberOld)
+                if (Number + 1 == seat.Number || Number - 1 == seat.Number)
                     return true;
             }
 
@@ -56,12 +54,12 @@ namespace CinemaAllocations.Domain
 
         protected override IEnumerable<object> GetAllAttributesToBeUsedForEquality()
         {
-            return new object[] { RowName, NumberOld, SeatAvailability };
+            return new object[] { RowName, Number, SeatAvailability };
         }
 
         public override string ToString()
         {
-            return $"{RowName}{NumberOld}";
+            return $"{RowName}{Number}";
         }
     }
 }
