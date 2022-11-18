@@ -12,25 +12,25 @@ internal static class Given
     {
         internal static string FordTheaterId => "1";
 
-        internal static MovieScreeningRepository FordTheater =>
+        internal static MovieScreenings FordTheater =>
             RetrieveMovieScreeningsFromJson(FordTheaterId);
 
         internal static string DockStreetId => "3";
 
-        internal static MovieScreeningRepository DockStreet =>
+        internal static MovieScreenings DockStreet =>
             RetrieveMovieScreeningsFromJson(DockStreetId);
 
         internal static string MadisonTheatherId => "5";
 
-        internal static MovieScreeningRepository MadisonTheater =>
+        internal static MovieScreenings MadisonTheater =>
             RetrieveMovieScreeningsFromJson(MadisonTheatherId);
 
         internal static string O3AuditoriumId => "2";
 
-        internal static MovieScreeningRepository O3Auditorium =>
+        internal static MovieScreenings O3Auditorium =>
             RetrieveMovieScreeningsFromJson(O3AuditoriumId);
 
-        private static MovieScreeningRepository RetrieveMovieScreeningsFromJson(string showId)
+        private static MovieScreenings RetrieveMovieScreeningsFromJson(string showId)
         {
             var options = new DbContextOptionsBuilder<CinemaContext>()
                 .UseInMemoryDatabase(databaseName: Guid.NewGuid().ToString())
@@ -40,7 +40,7 @@ internal static class Given
 
             AddMovieScreeningIfDoesExists(showId, cinemaContext);
 
-            return new MovieScreeningRepository(cinemaContext);
+            return new MovieScreenings(cinemaContext);
         }
 
         private static void AddMovieScreeningIfDoesExists(string showId, CinemaContext cinemaContext)

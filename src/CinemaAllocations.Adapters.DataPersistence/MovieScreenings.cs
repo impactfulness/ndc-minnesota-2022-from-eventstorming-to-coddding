@@ -2,11 +2,11 @@ using CinemaAllocations.Domain;
 
 namespace CinemaAllocations.Adapters.DataPersistence;
 
-public class MovieScreeningRepository : IMovieScreenings, IDisposable
+public class MovieScreenings : IMovieScreenings, IDisposable
 {
     private readonly CinemaContext _myContext;
 
-    public MovieScreeningRepository(CinemaContext myContext)
+    public MovieScreenings(CinemaContext myContext)
     {
         _myContext = myContext ?? throw new ArgumentNullException(nameof(myContext));
     }
