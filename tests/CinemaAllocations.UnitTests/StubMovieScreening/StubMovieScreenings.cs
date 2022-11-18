@@ -11,7 +11,8 @@ namespace CinemaAllocations.UnitTests.StubMovieScreening
 
         public StubMovieScreenings()
         {
-            var directoryName = $"{GetExecutingAssemblyDirectoryFullPath()}\\StubMovieScreening\\Stubs\\MovieScreenings\\";
+            var directoryName =
+                $"{GetExecutingAssemblyDirectoryFullPath()}\\StubMovieScreening\\Stubs\\MovieScreenings\\";
 
             if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux) || RuntimeInformation.IsOSPlatform(OSPlatform.OSX))
             {
@@ -52,7 +53,7 @@ namespace CinemaAllocations.UnitTests.StubMovieScreening
                     var seatAvailability = ExtractAvailability(seatDto.SeatAvailability);
 
 
-                    seats.Add(new Seat(rowName, number, seatAvailability));
+                    seats.Add(Seat.CreateFrom(rowName, number, seatAvailability));
                 }
 
                 rows.Add(rowDto.Key, new Row(rowDto.Key, seats));

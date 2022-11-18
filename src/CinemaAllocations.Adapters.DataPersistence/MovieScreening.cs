@@ -18,7 +18,7 @@ public sealed class MovieScreening
             {
                 Enum.TryParse(seatDataModel.Availability, out Domain.SeatAvailability seatAvailability);
 
-                var seat = new Domain.Seat(
+                var seat = Domain.Seat.CreateFrom(
                     rowDataModel.Name,
                     seatDataModel.Number,
                     seatAvailability);
