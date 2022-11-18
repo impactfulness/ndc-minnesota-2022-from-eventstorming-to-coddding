@@ -9,7 +9,6 @@ namespace CinemaAllocations.Domain
     {
         public RowName RowName { get; }
         public SeatNumber Number { get; }
-        [Obsolete] public uint NumberOld { get; }
         public SeatAvailability SeatAvailability { get; }
 
         private Seat(RowName rowName, SeatNumber number, SeatAvailability seatAvailability)
