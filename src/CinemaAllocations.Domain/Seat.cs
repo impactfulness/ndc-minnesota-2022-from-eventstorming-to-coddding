@@ -11,11 +11,6 @@ namespace CinemaAllocations.Domain
         public uint Number { get; }
         public SeatAvailability SeatAvailability { get; }
 
-        public Seat(string rowName, uint number, SeatAvailability seatAvailability) : this((RowName)rowName, number,
-            seatAvailability)
-        {
-        }
-
         public Seat(RowName rowName, uint number, SeatAvailability seatAvailability)
         {
             RowName = rowName;
