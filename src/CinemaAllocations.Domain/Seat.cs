@@ -15,6 +15,7 @@ namespace CinemaAllocations.Domain
         {
             RowName = rowName;
             NumberOld = number;
+            Number = (SeatNumber)number;
             SeatAvailability = seatAvailability;
         }
 
