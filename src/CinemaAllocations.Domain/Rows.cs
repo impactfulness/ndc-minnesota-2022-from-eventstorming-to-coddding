@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 
 namespace CinemaAllocations.Domain
 {
@@ -6,7 +7,7 @@ namespace CinemaAllocations.Domain
     {
         private readonly Dictionary<string, Row> _rows;
 
-        public Dictionary<string, Row>.ValueCollection Values => _rows.Values;
+        public List<Row> Values => _rows.Values.ToList();
 
         private Rows(Dictionary<string, Row> rows)
         {
