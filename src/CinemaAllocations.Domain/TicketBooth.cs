@@ -5,9 +5,9 @@ namespace CinemaAllocations.Domain
         private readonly IMovieScreenings _movieScreeningRepository;
         private const int MaximumNumberOfAllowedTickets = 8;
 
-        public TicketBooth(IMovieScreenings movieScreeningRepository)
+        public TicketBooth(IMovieScreenings movieScreenings)
         {
-            _movieScreeningRepository = movieScreeningRepository;
+            _movieScreeningRepository = movieScreenings;
         }
 
         public SeatsAllocated AllocateSeats(AllocateSeats allocateSeats)
