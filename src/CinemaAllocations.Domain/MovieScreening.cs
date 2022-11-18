@@ -14,7 +14,7 @@ namespace CinemaAllocations.Domain
             _rows = rows;
         }
 
-        public SeatsAllocated AllocateSeats(AllocateSeats allocateSeats)
+        internal SeatsAllocated AllocateSeats(AllocateSeats allocateSeats)
         {
             var numberOfSeatsAvailable = 0;
             foreach (var row in _rows.Values)
