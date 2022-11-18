@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Value;
@@ -8,6 +9,7 @@ namespace CinemaAllocations.Domain
     {
         public RowName RowName { get; }
         public SeatNumber Number { get; }
+        [Obsolete]
         public uint NumberOld { get; }
         public SeatAvailability SeatAvailability { get; }
 
