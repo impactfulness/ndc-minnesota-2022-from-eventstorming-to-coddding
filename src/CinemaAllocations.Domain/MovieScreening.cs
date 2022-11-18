@@ -9,8 +9,7 @@ namespace CinemaAllocations.Domain
 
         private readonly Rows _rows;
 
-        [Obsolete]
-        public MovieScreening(Rows rows)
+        private MovieScreening(Rows rows)
         {
             _rows = rows;
         }

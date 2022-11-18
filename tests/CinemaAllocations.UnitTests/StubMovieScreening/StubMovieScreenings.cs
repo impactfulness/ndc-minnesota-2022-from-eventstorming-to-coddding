@@ -58,7 +58,7 @@ namespace CinemaAllocations.UnitTests.StubMovieScreening
                 rows.Add(rowDto.Key, new Row(rowDto.Key, seats));
             }
 
-            return new MovieScreening(Rows.CreateFrom(rows));
+            return MovieScreening.CreateFrom(rows);
         }
 
         private static string? GetExecutingAssemblyDirectoryFullPath()
