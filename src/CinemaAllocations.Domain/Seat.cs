@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using System.Linq;
-using Microsoft.Win32.SafeHandles;
 using Value;
 
 namespace CinemaAllocations.Domain
@@ -11,7 +10,7 @@ namespace CinemaAllocations.Domain
         public uint Number { get; }
         public SeatAvailability SeatAvailability { get; }
 
-        public Seat(RowName rowName, uint number, SeatAvailability seatAvailability)
+        private Seat(RowName rowName, uint number, SeatAvailability seatAvailability)
         {
             RowName = rowName;
             Number = number;
