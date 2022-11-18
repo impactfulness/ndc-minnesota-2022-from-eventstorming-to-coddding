@@ -6,20 +6,20 @@ namespace CinemaAllocations.Domain
 {
     public class Seat : ValueType<Seat>
     {
-        public string RowName { get; }
+        public string RowNameOld { get; }
         public uint Number { get; }
         public SeatAvailability SeatAvailability { get; }
 
         public Seat(string rowName, uint number, SeatAvailability seatAvailability)
         {
-            RowName = rowName;
+            RowNameOld = rowName;
             Number = number;
             SeatAvailability = seatAvailability;
         }
 
         internal Seat ReserveSeats()
         {
-            return new Seat(RowName, Number, SeatAvailability.Reserved);
+            return new Seat(RowNameOld, Number, SeatAvailability.Reserved);
         }
 
         internal bool IsAvailable()
@@ -29,7 +29,7 @@ namespace CinemaAllocations.Domain
 
         private bool SameSeatLocation(Seat seat)
         {
-            return RowName.Equals(seat.RowName) && Number == seat.Number;
+            return RowNameOld.Equals(seat.RowNameOld) && Number == seat.Number;
         }
 
         internal bool IsAdjacentWith(List<Seat> seats)
@@ -47,12 +47,12 @@ namespace CinemaAllocations.Domain
 
         protected override IEnumerable<object> GetAllAttributesToBeUsedForEquality()
         {
-            return new object[] { RowName, Number, SeatAvailability };
+            return new object[] { RowNameOld, Number, SeatAvailability };
         }
 
         public override string ToString()
         {
-            return $"{RowName}{Number}";
+            return $"{RowNameOld}{Number}";
         }
     }
 }
