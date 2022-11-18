@@ -86,8 +86,8 @@ namespace CinemaAllocations.UnitTests
         {
             const int partyRequested = 4;
 
-            IMovieScreenings repository = new StubMovieScreenings();
-            var ticketBooth = new TicketBooth(repository);
+            IMovieScreenings movieScreenings = new StubMovieScreenings();
+            var ticketBooth = new TicketBooth(movieScreenings);
 
             var seatsAllocated = ticketBooth.AllocateSeats(new AllocateSeats(O3AuditoriumId, partyRequested));
 
