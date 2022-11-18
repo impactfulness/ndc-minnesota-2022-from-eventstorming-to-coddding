@@ -13,9 +13,9 @@ namespace CinemaAllocations.Domain
             _rows = rows;
         }
 
-        internal void UpdateRow(Row rowToUpdate)
+        internal void UpdateRow(Row row)
         {
-            _rows[rowToUpdate.Name] = rowToUpdate;
+            _rows[row.Name] = row;
         }
 
         internal Dictionary<string, Row> ToDictionary()
