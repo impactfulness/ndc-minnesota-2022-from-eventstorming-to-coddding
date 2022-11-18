@@ -4,12 +4,12 @@ using CinemaAllocations.Domain;
 
 namespace CinemaAllocations.UnitTests.StubMovieScreening
 {
-    public class StubMovieScreeningRepository : IMovieScreenings
+    public class StubMovieScreenings : IMovieScreenings
     {
         private readonly Dictionary<string, MovieScreeningDto> _movieScreeningRepository =
             new Dictionary<string, MovieScreeningDto>();
 
-        public StubMovieScreeningRepository()
+        public StubMovieScreenings()
         {
             var directoryName = $"{GetExecutingAssemblyDirectoryFullPath()}\\StubMovieScreening\\Stubs\\MovieScreenings\\";
 
