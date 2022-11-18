@@ -8,7 +8,7 @@ namespace CinemaAllocations.Domain
 
         public Dictionary<string, Row>.ValueCollection Values => _rows.Values;
 
-        internal Rows(Dictionary<string, Row> rows)
+        private Rows(Dictionary<string, Row> rows)
         {
             _rows = rows;
         }
