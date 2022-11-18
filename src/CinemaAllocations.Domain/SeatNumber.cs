@@ -2,7 +2,7 @@ using System;
 
 namespace CinemaAllocations.Domain
 {
-    public struct SeatNumber : IEquatable<SeatNumber>, IComparable<SeatNumber>
+    public readonly struct SeatNumber : IEquatable<SeatNumber>, IComparable<SeatNumber>
     {
         private readonly uint _value;
 
