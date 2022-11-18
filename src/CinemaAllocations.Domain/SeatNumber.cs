@@ -1,6 +1,6 @@
 namespace CinemaAllocations.Domain
 {
-    public class SeatNumber
+    public struct SeatNumber
     {
     }
 }
