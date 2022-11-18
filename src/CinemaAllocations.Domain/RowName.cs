@@ -41,5 +41,10 @@ namespace CinemaAllocations.Domain
         {
             return _value.GetHashCode();
         }
+
+        public override string ToString()
+        {
+            return _value;
+        }
     }
 }
