@@ -10,7 +10,7 @@ namespace CinemaAllocations.Domain
         {
             if (string.IsNullOrWhiteSpace(rowName))
                 throw new ArgumentException("Row name cannot be null or whitespace.", nameof(rowName));
-            
+
             _rowName = rowName;
         }
 
@@ -26,7 +26,7 @@ namespace CinemaAllocations.Domain
 
         public override int GetHashCode()
         {
-            throw new NotImplementedException();
+            return _rowName.GetHashCode();
         }
     }
 }
