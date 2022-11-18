@@ -15,7 +15,7 @@ namespace CinemaAllocations.Domain
             Seats = seats;
         }
 
-        public SeatsAllocated AllocateSeats(AllocateSeats allocateSeats)
+        internal SeatsAllocated AllocateSeats(AllocateSeats allocateSeats)
         {
             var allocation = new SeatAllocation(allocateSeats.PartyRequested);
 
